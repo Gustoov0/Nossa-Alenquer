@@ -285,23 +285,51 @@ footer a:hover{color:var(--terracota-clara);}
 /* AJUSTES PARA CELULAR */
 @media (max-width: 768px) {
   
-  .nav-links {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 10px;
-    gap: 15px;
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  .nav-toggle {
+    display: none !important; 
   }
   
+  .site-nav .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: flex !important;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    padding: 10px 0 15px 0 !important;
+    margin-top: 10px;
+    gap: 15px;
+    -webkit-overflow-scrolling: touch; 
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
   .detail-grid {
     display: flex !important;
     flex-direction: column !important;
     gap: 30px !important;
+    width: 100% !important;
+    box-sizing: border-box;
   }
   
   .detail-hero {
     height: 250px !important; 
     margin-bottom: 1rem !important;
+    width: 100% !important;
   }
   
   .gallery-ph {
@@ -309,8 +337,11 @@ footer a:hover{color:var(--terracota-clara);}
   }
 
   .tcard, .venue-card {
-    display: flex;
+    display: flex !important;
     flex-direction: column !important;
+    height: auto !important;
+    width: 100% !important;
+    box-sizing: border-box;
   }
   
   .tcard-photo, .venue-photo {
